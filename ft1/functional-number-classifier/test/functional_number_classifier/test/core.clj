@@ -4,3 +4,6 @@
 
 (deftest six-is-perfect-number
   (is (= :perfect (classify 6))))
+
+(deftest two-is-a-deficient-number
+  (is (= :deficient (classify 2))))
