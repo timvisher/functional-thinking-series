@@ -22,3 +22,6 @@
 
 (deftest aliquot-sum-for-six-is-six
   (is (= 6 (aliquot-sum 6))))
+
+(deftest aliquot-sum-for-ten-is-eight
+  (is (= 8 (aliquot-sum 10))))
