@@ -10,10 +10,10 @@
 (defn factors [number]
   (filter #(integer? (/ number %)) (range 1 (+ 1 number))))
 
-(defn factors-less-than-number [number]
+(defn proper-factors [number]
   (filter (partial > number) (factors number)))
 
 (defn classify [number]
-  (cond (= (reduce + (factors-less-than-number number)) number) :perfect
-        (< (reduce + (factors-less-than-number number)) number) :deficient
+  (cond (= (reduce + (proper-factors number)) number) :perfect
+        (< (reduce + (proper-factors number)) number) :deficient
         :default :abundant))
