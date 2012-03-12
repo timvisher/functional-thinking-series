@@ -7,3 +7,6 @@
 
 (deftest two-is-a-deficient-number
   (is (= :deficient (classify 2))))
+
+(deftest twelve-is-an-abundant-number
+  (is (= :abundant (classify 12))))
