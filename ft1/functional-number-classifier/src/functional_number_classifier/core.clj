@@ -7,6 +7,9 @@
 
 (ns functional-number-classifier.core)
 
+(defn factors [number]
+  (filter #(integer? (/ number %)) (range 1 (+ 1 number))))
+
 (defn classify [number]
   (cond (= 6 number) :perfect
         (= 2 number) :deficient
