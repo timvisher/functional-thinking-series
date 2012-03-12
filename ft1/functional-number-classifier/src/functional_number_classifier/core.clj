@@ -17,6 +17,6 @@
   (reduce + (proper-factors number)))
 
 (defn classify [number]
-  (cond (= (reduce + (proper-factors number)) number) :perfect
-        (< (reduce + (proper-factors number)) number) :deficient
+  (cond (= (aliquot-sum number) number) :perfect
+        (< (aliquot-sum number) number) :deficient
         :default :abundant))
