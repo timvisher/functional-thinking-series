@@ -14,6 +14,6 @@
   (filter (partial > number) (factors number)))
 
 (defn classify [number]
-  (cond (= 6 number) :perfect
-        (= 2 number) :deficient
+  (cond (= (reduce + (factors-less-than-number number)) number) :perfect
+        (< (reduce + (factors-less-than-number number)) number) :deficient
         :default :abundant))
