@@ -8,4 +8,6 @@
 (ns functional-number-classifier.core)
 
 (defn classify [number]
-  (if (= 6 number) :perfect :deficient))
+  (cond (= 6 number) :perfect
+        (= 2 number) :deficient
+        :default :abundant))
