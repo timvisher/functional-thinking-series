@@ -19,3 +19,6 @@
 
 (deftest twenty-eight-is-a-perfect-number
   (is (= :perfect (classify 28))))
+
+(deftest aliquot-sum-for-six-is-six
+  (is (= 6 (aliquot-sum 6))))
