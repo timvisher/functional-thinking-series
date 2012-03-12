@@ -25,3 +25,6 @@
 
 (deftest aliquot-sum-for-ten-is-eight
   (is (= 8 (aliquot-sum 10))))
+
+(deftest aliquot-sum-for-twenty-for-is-thirty-six
+  (is (= 36 (aliquot-sum 24))))
