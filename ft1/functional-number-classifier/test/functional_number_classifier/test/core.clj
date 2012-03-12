@@ -14,5 +14,8 @@
 (deftest factors-for-six-correct
   (is (= [1 2 3 6] (factors 6))))
 
+(deftest factors-less-than-six-correct
+  (is (= [1 2 3] (factors-less-than-number 6))))
+
 (deftest twenty-eight-is-a-perfect-number
   (is (= :perfect (classify 28))))
