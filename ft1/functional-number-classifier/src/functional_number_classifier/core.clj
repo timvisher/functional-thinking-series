@@ -10,6 +10,9 @@
 (defn factors [number]
   (filter #(integer? (/ number %)) (range 1 (+ 1 number))))
 
+(defn factors-less-than-number [number]
+  (filter (partial > number) (factors number)))
+
 (defn classify [number]
   (cond (= 6 number) :perfect
         (= 2 number) :deficient
