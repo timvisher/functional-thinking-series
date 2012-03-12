@@ -2,5 +2,5 @@
   (:use [functional-number-classifier.core])
   (:use [clojure.test]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest six-is-perfect-number
+  (is (= :perfect (classify 6))))

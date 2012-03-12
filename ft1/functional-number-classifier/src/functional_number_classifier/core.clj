@@ -6,3 +6,6 @@
 ;;; deficient number's sum of factors is less.
 
 (ns functional-number-classifier.core)
+
+(defn classify [number]
+  )
