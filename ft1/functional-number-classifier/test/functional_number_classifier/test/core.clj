@@ -10,3 +10,6 @@
 
 (deftest twelve-is-an-abundant-number
   (is (= :abundant (classify 12))))
+
+(deftest twenty-eight-is-a-perfect-number
+  (is (= :perfect (classify 28))))
