@@ -17,7 +17,10 @@
   (reduce + (proper-factors number)))
 
 (defn aliquot-sum-optimized [number]
-  (reduce + (proper-factors number)))
+  (let [factors-of-square-root(factors (+ 1 (Math/round (Math/sqrt number))))
+        symmetrical-factors (map (partial / number) factors-of-square-root)
+        proper-factors (filter (partial > number) (into factors-of-square-root symmetrical-factors))]
+    (reduce + proper-factors)))
 
 (defn classify-using [factor-sum-function number]
   (cond (= (factor-sum-function number) number) :perfect
