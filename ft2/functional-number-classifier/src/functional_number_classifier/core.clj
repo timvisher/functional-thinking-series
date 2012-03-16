@@ -16,10 +16,17 @@
 (defn aliquot-sum [number]
   (reduce + (proper-factors number)))
 
-(defn classify [number]
-  (cond (= (aliquot-sum number) number) :perfect
-        (< (aliquot-sum number) number) :deficient
+(defn aliquot-sum-optimized [number]
+  (reduce + (proper-factors number)))
+
+(defn classify-using [factor-sum-function number]
+  (cond (= (factor-sum-function number) number) :perfect
+        (< (factor-sum-function number) number) :deficient
         :default :abundant))
+
+(defn classify
+  ([number] (classify-using aliquot-sum number))
+  ([factor-sum-function number] (classify-using factor-sum-function number)))
 
 (comment
   (time (classify 30))                  ;"Elapsed time: 0.734451 msecs"

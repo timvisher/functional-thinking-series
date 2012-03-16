@@ -28,3 +28,12 @@
 
 (deftest aliquot-sum-for-twenty-for-is-thirty-six
   (is (= 36 (aliquot-sum 24))))
+
+(deftest can-explicitly-pass-factor-sum-function
+  (is (= :abundant (classify aliquot-sum 12))))
+
+(deftest optimized-aliquot-sum-for-twelve-is-sixteen
+  (is (= 16 (aliquot-sum-optimized 12))))
+
+(deftest classifying-twelve-by-optimized-aliquote-sum-returns-abundant
+  (is (= :abundant (classify aliquot-sum-optimized 12))))
