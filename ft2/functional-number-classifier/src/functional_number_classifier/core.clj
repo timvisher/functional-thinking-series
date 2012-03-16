@@ -20,3 +20,9 @@
   (cond (= (aliquot-sum number) number) :perfect
         (< (aliquot-sum number) number) :deficient
         :default :abundant))
+
+(comment
+  (time (classify 30))                  ;"Elapsed time: 0.734451 msecs"
+  (time (classify 3000))                ;"Elapsed time: 7.135265 msecs"
+  (time (classify 300000))              ;"Elapsed time: 276.859209 msecs"
+  )
