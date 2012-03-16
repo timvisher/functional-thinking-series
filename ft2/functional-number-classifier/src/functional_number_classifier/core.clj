@@ -32,7 +32,10 @@
   ([factor-sum-function number] (classify-using factor-sum-function number)))
 
 (comment
-  (time (classify 30))                  ;"Elapsed time: 0.734451 msecs"
-  (time (classify 3000))                ;"Elapsed time: 7.135265 msecs"
-  (time (classify 300000))              ;"Elapsed time: 276.859209 msecs"
+  (time (classify 30))                                        ;"Elapsed time: 0.734451 msecs"
+  (time (classify 3000))                                      ;"Elapsed time: 7.135265 msecs"
+  (time (classify 300000))                                    ;"Elapsed time: 276.859209 msecs"
+  (time (classify aliquot-sum-optimized 30))                  ;"Elapsed time: 0.225448 msecs"
+  (time (classify aliquot-sum-optimized 3000))                ;"Elapsed time: 1.435098 msecs"
+  (time (classify aliquot-sum-optimized 300000))              ;"Elapsed time: 1.212165 msecs"
   )
