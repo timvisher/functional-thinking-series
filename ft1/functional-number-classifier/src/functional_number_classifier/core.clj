@@ -8,7 +8,7 @@
 (ns functional-number-classifier.core)
 
 (defn factors [number]
-  (filter #(integer? (/ number %)) (range 1 (+ 1 number))))
+  (filter (comp integer? (partial / number)) (range 1 (+ 1 number))))
 
 (defn proper-factors [number]
   (filter (partial > number) (factors number)))
