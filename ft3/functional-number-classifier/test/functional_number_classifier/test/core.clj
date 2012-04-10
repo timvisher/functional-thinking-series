@@ -14,9 +14,6 @@
 (deftest factors-for-six-correct
   (is (= [1 2 3 6] (factors 6))))
 
-(deftest factors-less-than-six-correct
-  (is (= [1 2 3] (proper-factors 6))))
-
 (deftest twenty-eight-is-a-perfect-number
   (is (= :perfect (classify 28))))
 
@@ -33,7 +30,7 @@
   (is (= :abundant (classify aliquot-sum 12))))
 
 (deftest optimized-aliquot-sum-for-twelve-is-sixteen
-  (is (= 16 (aliquot-sum-optimized 12))))
+  (is (= 16 (aliquot-sum 12))))
 
 (deftest classifying-twelve-by-optimized-aliquote-sum-returns-abundant
-  (is (= :abundant (classify aliquot-sum-optimized 12))))
+  (is (= :abundant (classify aliquot-sum 12))))
