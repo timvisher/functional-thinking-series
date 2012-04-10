@@ -17,7 +17,7 @@
   (reduce + (proper-factors number)))
 
 (defn aliquot-sum-optimized [number]
-  (let [factors-of-square-root(factors (+ 1 (Math/round (Math/sqrt number))))
+  (let [factors-of-square-root (filter (partial #(= 0 (rem %1 %2)) number) (range 1 (+ 1 (Math/round (Math/sqrt number)))))
         symmetrical-factors (map (partial / number) factors-of-square-root)
         proper-factors (filter (partial > number) (into factors-of-square-root symmetrical-factors))]
     (reduce + proper-factors)))
