@@ -43,6 +43,6 @@
 ;;       assertFalse(NumberClassifier.isPerfect(i))
 ;; }
 (deftest negative-perfection
-  (let [known-perfects [6 28 496 8128]]
-    (dorun
-     (map #(if (some (partial = %) known-perfects) (is (= :perfect (classify %))) (is (not (= :perfect (classify %))))) (range 1 10000)))))
+  (let [known-perfects #{6 28 496 8128}
+        non-perfects-till-10000 (apply disj (apply hash-set (range 1 10000)) known-perfects)]
+    (is (not-any? (partial = :perfect) (map classify non-perfects-till-10000)))))
