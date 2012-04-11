@@ -34,3 +34,15 @@
 
 (deftest classifying-twelve-by-optimized-aliquote-sum-returns-abundant
   (is (= :abundant (classify aliquot-sum 12))))
+
+;; @Test def negative_perfection() {
+;;   for (i <- 1 until 10000)
+;;     if (Set(6, 28, 496, 8128).contains(i))
+;;       assertTrue(NumberClassifier.isPerfect(i))
+;;     else
+;;       assertFalse(NumberClassifier.isPerfect(i))
+;; }
+(deftest negative-perfection
+  (let [known-perfects [6 28 496 8128]]
+    (dorun
+     (map #(if (some (partial = %) known-perfects) (is (= :perfect (classify %))) (is (not (= :perfect (classify %))))) (range 1 10000)))))
