@@ -22,3 +22,6 @@
 
 (deftest product-of-2-and-32-is-64
   (is (= 64 (thirty-twoer 2))))
+
+(deftest increment-of-7-is-8
+  (is (= 8 (increment 7))))
