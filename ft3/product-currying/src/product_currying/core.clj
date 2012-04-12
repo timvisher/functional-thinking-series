@@ -36,3 +36,8 @@
 ;; println "composition of curried functions yields ${thirtyTwoer(2)}"
 
 (def thirty-twoer (comp quadrate octate))
+
+;; def adder = { x, y -> return x + y }
+;; def incrementer = adder.curry(1)
+
+;; println "increment 7: ${incrementer(7)}"
