@@ -31,3 +31,6 @@
 
 (deftest numbers-under-10-that-divide-by-3
   (is (= [3 6 9] (filter (partial divides-by? 3) (range 1 10)))))
+
+(deftest cannot-pass-non-sequential-to-my-filter
+  (try (my-filter true 1) (catch AssertionError e)))
