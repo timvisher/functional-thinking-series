@@ -10,3 +10,6 @@
 
 (deftest volume-of-rectange-2-by-3-by-4-is-24
   (is (= 24 (volume 2 3 4))))
+
+(deftest area-of-3-by-4-rectangle-is-12
+  (is (= 12 (area 3 4))))
