@@ -37,3 +37,6 @@
 
 (deftest cannot-pass-sequential-containing-non-integer-to-my-filter
   (try (my-filter true [:t :f :g]) (catch AssertionError e)))
+
+(deftest filtering-empty-returns-empty
+  (is (empty? (my-filter (partial divides-by? 2) []))))
