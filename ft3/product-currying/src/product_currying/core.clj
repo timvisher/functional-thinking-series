@@ -56,3 +56,4 @@
 ;;   println(filter(nums, dividesBy(2)))
 ;;   println(filter(nums, dividesBy(3)))
 ;; }
+(defn divides-by? [divisor number] (= 0 (rem number divisor)))
