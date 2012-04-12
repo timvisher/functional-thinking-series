@@ -23,3 +23,5 @@
 ;; println "The length of the 6 line via curried function is ${lengthC(6)}"
 (defn volume [h w l]
   (* h w l))
+
+(def area (partial volume 1))
