@@ -10,7 +10,7 @@
 (defn aliquot-sum [number]
   (let [factors-of-square-root (filter (partial factor? number) (range 1 (Math/ceil (Math/sqrt number))))
         symmetrical-factors (map (partial / number) factors-of-square-root)
-        proper-factors (filter (partial > number) (distinct (into factors-of-square-root symmetrical-factors)))]
+        proper-factors (filter (partial > number) (into factors-of-square-root symmetrical-factors))]
     (reduce + proper-factors)))
 
 (defn classify-using [factor-sum-function number]
