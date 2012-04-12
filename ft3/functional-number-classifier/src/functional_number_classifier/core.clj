@@ -8,7 +8,7 @@
   (filter (partial factor? number) (range 1 (+ 1 number))))
 
 (defn aliquot-sum [number]
-  (let [factors-of-square-root (filter (partial factor? number) (range 1 (+ 1 (Math/round (Math/sqrt number)))))
+  (let [factors-of-square-root (filter (partial factor? number) (range 1 (Math/ceil (Math/sqrt number))))
         symmetrical-factors (map (partial / number) factors-of-square-root)
         proper-factors (filter (partial > number) (distinct (into factors-of-square-root symmetrical-factors)))]
     (reduce + proper-factors)))
