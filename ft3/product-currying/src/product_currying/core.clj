@@ -74,4 +74,5 @@
 
 (defn my-filter [predicate sequence]
   {:pre [(sequential? sequence)
-         (every? integer? sequence)]})
+         (every? integer? sequence)]}
+  (when (empty? sequence) sequence))
