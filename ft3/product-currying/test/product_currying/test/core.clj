@@ -28,3 +28,6 @@
 
 (deftest numbers-under-10-that-divide-by-2
   (is (= [2 4 6 8] (filter (partial divides-by? 2) (range 1 10)))))
+
+(deftest numbers-under-10-that-divide-by-3
+  (is (= [3 6 9] (filter (partial divides-by? 3) (range 1 10)))))
