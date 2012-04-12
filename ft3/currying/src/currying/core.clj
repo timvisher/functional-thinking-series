@@ -1,3 +1,4 @@
+;;; http://www.ibm.com/developerworks/java/library/j-ft3/index.html
 (ns currying.core)
 
 ;; def product = { x, y -> return x * y }
