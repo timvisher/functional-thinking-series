@@ -2,7 +2,7 @@
 (ns functional-number-classifier.core)
 
 (defn factor? [number potential-factor]
-  (integer? (/ number potential-factor)))
+  (= 0 (rem number potential-factor)))
 
 (defn factors [number]
   (filter (partial factor? number) (range 1 (+ 1 number))))
