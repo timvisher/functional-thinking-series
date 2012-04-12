@@ -16,3 +16,6 @@
 
 (deftest the-length-of-the-6-line-by-full-partial-is-6
   (is (= 6 (length-full-partial 6))))
+
+(deftest the-length-of-the-6-line-by-double-partial-is-6
+  (is (= 6 (length-double-partial 6))))
