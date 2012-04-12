@@ -29,3 +29,8 @@
 (def length-full-partial (partial volume 1 1))
 
 (def length-double-partial (partial (partial volume 1) 1))
+
+;; def composite = { f, g, x -> return f(g(x)) }
+;; def thirtyTwoer = composite.curry(quadrate, octate)
+
+;; println "composition of curried functions yields ${thirtyTwoer(2)}"
