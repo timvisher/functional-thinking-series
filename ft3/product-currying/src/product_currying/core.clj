@@ -34,3 +34,5 @@
 ;; def thirtyTwoer = composite.curry(quadrate, octate)
 
 ;; println "composition of curried functions yields ${thirtyTwoer(2)}"
+
+(def thirty-twoer (comp quadrate octate))
