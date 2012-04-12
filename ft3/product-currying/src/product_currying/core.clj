@@ -21,3 +21,5 @@
 ;; println "The area of the 3x4 rectangle is ${area(3, 4)}"
 ;; println "The length of the 6 line is ${lengthPA(6)}"
 ;; println "The length of the 6 line via curried function is ${lengthC(6)}"
+(defn volume [h w l]
+  (* h w l))
