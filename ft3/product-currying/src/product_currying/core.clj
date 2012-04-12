@@ -75,4 +75,8 @@
 (defn my-filter [predicate sequence]
   {:pre [(sequential? sequence)
          (every? integer? sequence)]}
-  (when (empty? sequence) sequence))
+  (loop [sequence sequence
+         filtered-sequence []]
+    (if (empty? sequence)
+      filtered-sequence
+      (recur (next sequence) (if (predicate (first sequence)) (conj filtered-sequence (first sequence)) filtered-sequence)))))
