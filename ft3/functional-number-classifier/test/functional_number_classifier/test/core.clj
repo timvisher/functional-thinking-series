@@ -46,3 +46,10 @@
   (let [known-perfects #{6 28 496 8128}
         non-perfects-till-10000 (apply disj (apply hash-set (range 1 10000)) known-perfects)]
     (is (not-any? (partial = :perfect) (map classify non-perfects-till-10000)))))
+
+;; @Test def alternate_perfection() {
+;;   assertEquals(List(6, 28, 496, 8128),
+;;               (1 until 10000) filter (NumberClassifier.isPerfect(_)))
+;; }
+(deftest alternate-perfection
+  (is (= [6 28 496 8128] (filter (comp (partial = :perfect) classify) (range 1 10000)))))
