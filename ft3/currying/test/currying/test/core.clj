@@ -1,5 +1,5 @@
-(ns product-currying.test.core
-  (:use [product-currying.core])
+(ns currying.test.core
+  (:use [currying.core])
   (:use [clojure.test]))
 
 (deftest product-of-3-and-4-is-12

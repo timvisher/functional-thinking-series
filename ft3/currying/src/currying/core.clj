@@ -1,4 +1,4 @@
-(ns product-currying.core)
+(ns currying.core)
 
 ;; def product = { x, y -> return x * y }
 
