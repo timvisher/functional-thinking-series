@@ -71,3 +71,6 @@
 ;;   println(filter(nums, dividesBy(2)))
 ;;   println(filter(nums, dividesBy(3)))
 ;; }
+
+(defn my-filter [predicate sequence]
+  {:pre [(sequential? sequence)]})
