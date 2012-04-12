@@ -7,3 +7,5 @@
 ;; println "5x8: ${octate(5)}"
 
 (ns product-currying.core)
+
+(def quadrate (partial * 4))
