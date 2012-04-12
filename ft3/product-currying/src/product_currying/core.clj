@@ -25,3 +25,5 @@
   (* h w l))
 
 (def area (partial volume 1))
+
+(def length-full-partial (partial volume 1 1))
