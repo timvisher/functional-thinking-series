@@ -25,3 +25,6 @@
 
 (deftest increment-of-7-is-8
   (is (= 8 (increment 7))))
+
+(deftest numbers-under-10-that-divide-by-2
+  (is (= [2 4 6 8] (filter (partial divides-by? 2) (range 1 10)))))
