@@ -41,3 +41,4 @@
 ;; def incrementer = adder.curry(1)
 
 ;; println "increment 7: ${incrementer(7)}"
+(def increment (partial + 1))
