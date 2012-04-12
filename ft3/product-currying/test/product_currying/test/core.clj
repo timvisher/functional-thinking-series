@@ -34,3 +34,6 @@
 
 (deftest cannot-pass-non-sequential-to-my-filter
   (try (my-filter true 1) (catch AssertionError e)))
+
+(deftest cannot-pass-sequential-containing-non-integer-to-my-filter
+  (try (my-filter true [:t :f :g]) (catch AssertionError e)))
