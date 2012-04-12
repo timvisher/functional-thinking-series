@@ -19,3 +19,6 @@
 
 (deftest the-length-of-the-6-line-by-double-partial-is-6
   (is (= 6 (length-double-partial 6))))
+
+(deftest product-of-2-and-32-is-64
+  (is (= 64 (thirty-twoer 2))))
