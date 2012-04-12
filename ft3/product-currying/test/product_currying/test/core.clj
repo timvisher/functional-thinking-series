@@ -13,3 +13,6 @@
 
 (deftest area-of-3-by-4-rectangle-is-12
   (is (= 12 (area 3 4))))
+
+(deftest the-length-of-the-6-line-by-full-partial-is-6
+  (is (= 6 (length-full-partial 6))))
