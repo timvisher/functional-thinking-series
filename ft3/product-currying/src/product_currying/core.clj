@@ -9,3 +9,5 @@
 (ns product-currying.core)
 
 (def quadrate (partial * 4))
+
+(def octate (partial * 8))
