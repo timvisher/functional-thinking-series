@@ -2,5 +2,5 @@
   (:use [product-currying.core])
   (:use [clojure.test]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest product-of-3-and-4-is-12
+  (is (= 12 (quadrate 3))))
