@@ -6,3 +6,5 @@
    :city city
    :state state
    :zip zip})
+
+(defrecord Address [name streets city state zip])

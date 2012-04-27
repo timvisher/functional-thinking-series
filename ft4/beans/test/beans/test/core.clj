@@ -19,3 +19,16 @@
       (set! can_t-mutate-me (assoc can_t-mutate-me :name "bar"))
       (is nil "Whoops! Should've thrown an exception!"))
     (catch IllegalStateException e)))
+
+(deftest it-should-be-a-basic-map
+  (is (instance? java.util.Map (test-address))))
+
+(deftest it-should-be-a-basic-map
+  (is (instance? java.util.Map (->Address "foo" ["bar"] "bat" "bin" "biz"))))
+
+(deftest it-should-be-a-Address-type-that-we-defined
+  (is (instance? beans.core.Address (->Address "foo" ["bar"] "bat" "bin" "biz"))))
+
+(deftest it-should-allow-uac-field-lookup
+  (is (= "foo" (:name (->Address "foo" ["bar"] "bat" "bin" "biz"))))
+  (is (= "foo" (:name (test-address)))))
