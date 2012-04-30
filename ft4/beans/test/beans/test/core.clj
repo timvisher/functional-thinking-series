@@ -13,6 +13,15 @@
 
 (def can_t-mutate-me (test-address))
 
+(def can-mutate-me (java.util.HashMap.))
+
+(deftest it-does-allow-me-to-mutate-it_s-state
+  (is (.isEmpty can-mutate-me))
+  (.put can-mutate-me "foo" "bar")
+  (is (not (.isEmpty can-mutate-me)))
+  (.clear can-mutate-me)
+  (is (.isEmpty can-mutate-me)))
+
 (deftest it-should-not-allow-me-to-mutate-it_s-state
   (try
     (do
