@@ -32,3 +32,18 @@
 (deftest it-should-allow-uac-field-lookup
   (is (= "foo" (:name (->Address "foo" ["bar"] "bat" "bin" "biz"))))
   (is (= "foo" (:name (test-address)))))
+
+(defmacro xtime [expr]
+  `(let [start# (. System (nanoTime))
+         ret# ~expr]
+     (- (. System (nanoTime)) start#)))
+
+(deftest it-should-perform-better-at-field-lookup
+  (let [address-record (->Address "foo" ["bar"] "bat" "bin" "biz")
+        address-map (test-address)]
+    (is (< (xtime (dotimes [n 10000000] (:name address-record))) (xtime (dotimes [n 10000000] (:name address-map)))))))
+
+(deftest it-should-perform-better-at-field-lookup-but-it-does-not
+  (let [address-record (map->Address (test-address))
+        address-map (test-address)]
+    (is (not (< (xtime (:name address-record)) (xtime (:name address-map)))))))
