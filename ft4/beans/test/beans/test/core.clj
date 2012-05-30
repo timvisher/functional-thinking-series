@@ -1,6 +1,6 @@
 (ns beans.test.core
-  (:use [beans.core])
-  (:use [clojure.test]))
+  (:require [beans.core :refer :all]
+            [clojure.test :refer :all]))
 
 (defn test-address []
   (address "foo" ["data way" "driven ct" "development cr"] "Clojure" "Functional Programming" "12345"))
@@ -49,8 +49,9 @@
 
 (deftest it-should-perform-better-at-field-lookup
   (let [address-record (->Address "foo" ["bar"] "bat" "bin" "biz")
-        address-map (test-address)]
-    (is (< (xtime (dotimes [n 10000000] (:name address-record))) (xtime (dotimes [n 10000000] (:name address-map)))))))
+        address-map (test-address)
+        execution-count 10000000]
+    (is (< (xtime (dotimes [n execution-count] (:name address-record))) (xtime (dotimes [n execution-count] (:name address-map)))))))
 
 (deftest it-should-perform-better-at-field-lookup-but-it-does-not
   (let [address-record (map->Address (test-address))
